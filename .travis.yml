@@ -9,7 +9,7 @@ python:
   - "2.6"
 
 before_install:
-  - sudo apt-get install imagemagick
+  - sudo apt-get install imagemagick libi2c-dev i2c-tools python-dev libffi-dev
   - wget https://raw.githubusercontent.com/gonzalo/gphoto2-updater/master/gphoto2-updater.sh
   - chmod +x gphoto2-updater.sh
   - sudo ./gphoto2-updater.sh
