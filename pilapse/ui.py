@@ -29,13 +29,13 @@ class FakeCharLCDPlate(object):
         pass
 
     def clear(self):
-        print "--LCD Cleared--"
+        print("--LCD Cleared--")
 
     def message(self, msg):
-        print msg
+        print(msg)
 
     def backlight(self, bl):
-        print "Backlight %s" % str(bl)
+        print("Backlight %s" % str(bl))
 
     def fakeonly_getch(self):
         self._ch = self._getch()
@@ -81,22 +81,21 @@ class TimelapseUi(object):
                     self._lcd.fakeonly_getch()
 
                 if self._lcd.buttonPressed(self._lcd.UP):
-                    print "UP"
+                    print("UP")
                     current -= 1
                     if current < 0:
                         current = 0
                     break
                 if self._lcd.buttonPressed(self._lcd.DOWN):
-                    print "DOWN"
+                    print("DOWN")
                     current += 1
                     if current >= len(configs):
                         current = len(configs) - 1
                     break
                 if self._lcd.buttonPressed(self._lcd.SELECT):
-                    print "SELECT"
+                    print("SELECT")
                     ready = True
                     break
-            print "end"
+            print("end")
             self.show_config(configs, current)
-        return current 
-
+        return current
