@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import smbus._smbus_cffi
 import smbus
 
 # ===========================================================================
