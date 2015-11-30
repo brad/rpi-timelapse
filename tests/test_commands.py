@@ -76,7 +76,8 @@ class IdentifyTestCase(unittest.TestCase):
 
     def test_brightness(self):
         full_path = os.path.join(os.getcwd(), 'tests', 'files', 'test.jpg')
-        self.assertEqual(self.identify.mean_brightness(full_path), '2563.09\n')
+        self.assertTrue(
+            self.identify.mean_brightness(full_path).startswith('2563'))
 
     @patch('envoy.run')
     def test_brightness_run(self, mock_run):
