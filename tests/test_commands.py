@@ -111,7 +111,7 @@ class GPhotoTestCase(unittest.TestCase):
     def test_get_camera_time(self, mock_run):
         _time = self.gphoto.get_camera_date_time()
         self.assertEqual(
-            _time, time.strptime("2015-11-28 22:59:12", "%Y-%m-%d %H:%M:%S"))
+            _time, time.strptime("2015-11-29 06:59:12", "%Y-%m-%d %H:%M:%S"))
         mock_run.assert_called_once_with(
             '/usr/local/bin/gphoto2 --get-config /main/status/datetime')
 
@@ -120,7 +120,7 @@ class GPhotoTestCase(unittest.TestCase):
         # A Nikon D7000 (for one example) has a different path for datetime
         _time = self.gphoto.get_camera_date_time()
         self.assertEqual(
-            _time, time.strptime("2015-11-28 22:59:12", "%Y-%m-%d %H:%M:%S"))
+            _time, time.strptime("2015-11-29 06:59:12", "%Y-%m-%d %H:%M:%S"))
         mock_run.assert_any_call(
             '/usr/local/bin/gphoto2 --get-config /main/status/datetime')
         mock_run.assert_any_call(

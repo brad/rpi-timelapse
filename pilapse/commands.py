@@ -76,7 +76,7 @@ class GPhoto(Command):
                     return time.strptime(time_str, "%Y-%m-%d %H:%M:%S")
                 except ValueError:
                     # The time may instead be a timestamp
-                    return datetime.fromtimestamp(int(time_str)).timetuple()
+                    return datetime.utcfromtimestamp(int(time_str)).timetuple()
         if not time_str:
             raise Exception('No time parsed from ' + out)
 
