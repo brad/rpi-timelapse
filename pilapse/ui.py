@@ -1,5 +1,7 @@
 from time import sleep
-from Adafruit_CharLCDPlate import Adafruit_CharLCDPlate
+
+from .Adafruit_CharLCDPlate import Adafruit_CharLCDPlate
+
 
 class _GetchUnix:
     def __init__(self):
