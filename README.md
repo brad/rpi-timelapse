@@ -1,6 +1,11 @@
 rpi-timelapse
 =============
 
+[![Build Status](https://travis-ci.org/brad/rpi-timelapse.svg?branch=master)](https://travis-ci.org/brad/rpi-timelapse)
+
+[![codecov.io](https://codecov.io/github/brad/rpi-timelapse/coverage.svg?branch=master)](https://codecov.io/github/brad/rpi-timelapse?branch=master)
+
+
 A timelapse camera controller for Raspberry Pi. Testet with Canon EOS 600D and Canon EOS 6D (should work with any camera supported by `gphoto2` with minor tweaks), with an optional UI and controls on the Adafruit LCD Pi plate.
 
 
