@@ -1,0 +1,23 @@
+language: python
+
+python:
+  - "pypy"
+  - "3.5"
+  - "3.4"
+  - "3.3"
+  - "2.7"
+  - "2.6"
+
+before_install:
+  - sudo apt-get install imagemagick
+  - wget https://raw.githubusercontent.com/gonzalo/gphoto2-updater/master/gphoto2-updater.sh
+  - chmod +x gphoto2-updater.sh
+  - sudo ./gphoto2-updater.sh
+  - pip install codecov
+
+install: pip install -r requirements/test.txt
+
+script: nosetests --with-coverage --cover-package=pilapse --cover-inclusive --cover-branches
+
+after_success:
+  - codecov

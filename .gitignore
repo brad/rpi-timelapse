@@ -1,3 +1,6 @@
 *.pyc
 *.cfg
 *.log
+.coverage
+.tox
+env
