@@ -83,6 +83,7 @@ class GPhoto(Command):
 
     def capture_image_and_download(self, shot=None, image_directory=None):
         code, out, err = self.call(self.cmd + " --capture-image-and-download --filename '%Y%m%d%H%M%S.JPG'")
+        print(out)
         filename = None
         for line in out.split('\n'):
             if line.startswith('Saving file as '):
@@ -112,7 +113,7 @@ class GPhoto(Command):
         if secs:
             if self.shutter_choices == None:
                 self.get_shutter_speeds()
-            code, out, err = self.call(self.cmd + " --set-config /main/capturesettings/shutterspeed=" + str(secs))
+            code, out, err = self.call(self.cmd + " --set-config /main/capturesettings/shutterspeed=" + str(self.shutter_choices[secs]))
         if index:
             code, out, err = self.call(self.cmd + " --set-config /main/capturesettings/shutterspeed=" + str(index))
 
